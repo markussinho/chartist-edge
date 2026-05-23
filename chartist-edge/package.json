@@ -1,0 +1,13 @@
+{
+  "name": "chartist-edge",
+  "version": "1.0.0",
+  "description": "ChartistEdge — Gold Macro Intelligence Platform",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@netlify/blobs": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
