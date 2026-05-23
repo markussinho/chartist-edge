@@ -1,28 +1,27 @@
 [build]
-  publish = "public"
-  functions = "netlify/functions"
-
+  base = "chartist-edge"
+  publish = "chartist-edge/public"
+  functions = "chartist-edge/netlify/functions"
+ 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["netlify/functions/**"]
-
-# Scheduled function — runs every 2 hours
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
-
-# Redirect /api/* to Netlify functions
+ 
 [[redirects]]
   from = "/api/latest-bias"
   to = "/.netlify/functions/latest-bias"
   status = 200
-
+ 
 [[redirects]]
   from = "/api/generate"
   to = "/.netlify/functions/generate-bias"
   status = 200
-
-# Serve dashboard from root
+ 
 [[redirects]]
   from = "/dashboard"
+  to = "/dashboard/index.html"
+  status = 200
+ 
+[[redirects]]
+  from = "/"
   to = "/dashboard/index.html"
   status = 200
